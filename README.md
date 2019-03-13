@@ -4,11 +4,13 @@ To protect you from eye strain when watching the screen too long.
 It forces you to take a break every certain minutes by locking the screen.
 
 ## Usage
+You can use the bash script to run the app as:
 
 ``$ eye``
 
 By default, the work time span is 45 minutes, and the break span is 5 minutes.
-Or, uou can also specify the time span by using the following command:
+
+Or, you can also specify the time span with the command below by yourself:
 
 ``$ java -jar ./eyekp.jar 45 5``
 
