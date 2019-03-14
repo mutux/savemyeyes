@@ -26,6 +26,7 @@ public class Keeper extends JDialog {
     private JLabel label = null;
     private boolean breaking = false;
     private int rest_time = 0;
+    private static final int fontsize = 80;
     
     public Keeper(int rest_time) {
     	
@@ -35,12 +36,18 @@ public class Keeper extends JDialog {
         JPanel pane = (JPanel)this.getContentPane();
         pane.setBackground(Color.black);
         pane.setLayout(null);
+        JLabel slb = new JLabel("Publish or Perish!");
+        Font slbFont = slb.getFont();
+        slb.setFont(new Font(slbFont.getName(), Font.BOLD, fontsize));
+        Dimension ssize = slb.getPreferredSize();
+        slb.setForeground(Color.WHITE);
+        pane.add(slb);
+        slb.setBounds((scDim.width-ssize.width)/2, (scDim.height-ssize.height)/2 - fontsize, ssize.width, ssize.height);
         label = new JLabel();
 //      label.setForeground(Color.white);
 		label.setText(this.formatLabel(rest_time));
-        
         Font labelFont = label.getFont();
-        label.setFont(new Font(labelFont.getName(), Font.BOLD, 80));
+        label.setFont(new Font(labelFont.getName(), Font.BOLD, fontsize));
         Dimension size = label.getPreferredSize();
         pane.add(label);
         label.setBounds((scDim.width-size.width)/2, (scDim.height-size.height)/2, size.width, size.height);
